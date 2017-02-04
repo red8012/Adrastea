@@ -20,12 +20,21 @@ define(['base/js/namespace',
         function _on_load() {
             console.info('AdrasteaNotebookExtension loaded')
 
-            $('#header-container').prepend($('#kernel_indicator_icon'))
+            $('#header-container').prepend($('#kernel_indicator_icon').detach())
             $('#kernel_indicator').remove()
-            $('#header-container').append($('#notification_area').remove())
-            $('#header-container').append($('#maintoolbar-container').remove())
-            $('#header-container').append($('#menubar').remove())
+            $('#header-container').append($('#notification_area').detach())
+            $('#header-container').append($('#maintoolbar-container').detach())
+            $('#header-container').append($('#menubar').detach())
             $('#menubar-container').remove()
+            console.info($('div#site').height())
+            console.info($(window).height())
+            console.info($('#header').height())
+            console.info($(window).height() - $('#header').height())
+
+            $('div#site').height($(window).height() - $('#header').height());
+            setTimeout(function () {
+                $('div#site').height($(window).height() - $('#header').height());
+            }, 3000)
 
             $.SaveWidget = SaveWidget
             $.CM = CodeMirror
