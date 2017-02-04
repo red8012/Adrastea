@@ -1,0 +1,299 @@
+body,
+body.notebook_app.command_mode {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+#header-container {
+	margin-left: 0;
+	padding: 0;
+	display: flex;
+	width: 100%;
+}
+
+#ipython_notebook {
+	display: none;
+}
+
+#login_widget {
+	display: none;
+}
+
+
+/* ======= kernel indicator ======= */
+
+#kernel_indicator_icon {
+	margin: -5px 10px -5px -1px;
+}
+
+.kernel_idle_icon:before {
+	font: sans-serif;
+	content: "";
+}
+
+.kernel_idle_icon {
+	background-color: rgb(102, 187, 106);
+	width: 10px;
+}
+
+.kernel_busy_icon:before {
+	font: sans-serif;
+	content: "";
+}
+
+.kernel_busy_icon {
+	background-color: #c82829;
+	width: 10px;
+}
+
+#kernel_logo_widget {
+	float: none !important;
+	order: 0;
+}
+
+
+/* ======= save widget ======= */
+
+#save_widget {
+	order: 1;
+	width: auto;
+	margin-right: 10px;
+}
+
+span.save_widget span.filename {
+	margin-left: 5px;
+	margin-right: 10px;
+}
+
+#header-placeholder {
+	order: 2;
+}
+
+
+/* ======= notification ======= */
+
+#notification_area {
+	float: none !important;
+	order: 3;
+	flex-grow: 1;
+}
+
+
+/* ======= menus ======= */
+
+#menubar {
+	order: 4;
+	width: auto;
+}
+
+#menus {
+	margin-bottom: 0;
+	background-color: transparent;
+	border: none;
+}
+
+.nav > li > a {
+	padding-right: 10px;
+	padding-left: 10px;
+}
+
+.navbar-default .navbar-nav > li > a:hover {
+	color: rgb(100, 160, 255);
+}
+
+#modal_indicator {
+	display: none;
+}
+
+
+/* ======= icons ======= */
+
+#maintoolbar-container {
+	order: 5;
+	width: auto;
+	margin: 0px;
+	padding-top: 2px;
+}
+
+.btn-group {
+	margin-left: 0;
+	margin-right: 0;
+	padding-left: 10px;
+	padding-right: 5px;
+	border-left-color: lightgray;
+	border-left-style: solid;
+	border-left-width: 1px;
+}
+
+.toolbar .btn-default {
+	padding: 4px 8px;
+	border: none;
+	font-size: 14px;
+}
+
+.toolbar .btn-default:hover {
+	color: rgb(100, 160, 255);
+	background: transparent;
+}
+
+#cell_type {
+	display: none;
+}
+
+button[title="show new celltoolbar selector location"] {
+	display: none;
+}
+
+
+/* notebook*/
+
+#notebook-container {
+	padding-left: 0;
+	border-radius: 5px;
+}
+
+.CodeMirror pre,
+.CodeMirror-dialog,
+.CodeMirror-dialog .CodeMirror-search-field,
+.terminal-app .terminal,
+div.output pre,
+div.output code,
+.rendered_html pre,
+.rendered_html code,
+div.completions select,
+div.container pre,
+.prompt {
+	font-size: 12pt;
+	font-family: "Ubuntu Mono", menlo, monospace;
+}
+
+div.cell {
+	border-style: none;
+	border-radius: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+div.cell.selected {
+	/*
+	width: calc(100% + 60px);
+	margin-left: -30px;
+	padding-left: 28px;
+*/
+	width: calc(100% + 50px);
+	margin-left: -20px;
+	padding-left: 18px;
+	padding-right: 35px;
+	background: #ffffff;
+	box-shadow: 1px 0 10px 1px rgba(80, 90, 160, 0.7);
+	border-left: 7px solid rgb(66, 165, 245);
+	/*	box-shadow: 0 0 10px 0 rgba(139, 116, 236, 1.0)*/
+}
+
+.edit_mode div.cell.selected {
+	background: #ffffff;
+	/*	padding-left: 28px;*/
+	padding-left: 18px;
+	/*	box-shadow: 0 0 10px 1px rgba(65, 147, 114, 0.7);*/
+	box-shadow: 1px 0 10px 1px rgba(60, 127, 100, 0.7);
+	border-left: 7px solid rgb(102, 187, 106);
+}
+
+div.input_area {
+	background: #ffffff;
+	border-radius: 5px;
+}
+
+.edit_mode div.cell.selected div.input_area {
+	border-color: rgb(102, 187, 106);
+}
+
+
+/*CodeMirror Base16 Tomorrow Theme*/
+
+
+/*CodeMirror {background: red !important; color: #202020;}*/
+
+
+/*div.CodeMirror-selected {background: #e0e0e0 !important;}*/
+
+.CodeMirror-gutters {
+	background: #f5f5f5;
+	border-right: 0px;
+}
+
+.CodeMirror-linenumber {
+	color: #b0b0b0;
+}
+
+.CodeMirror-cursor {
+	border-left: 2px solid #4d4d4c !important;
+}
+
+span.cm-comment {
+	color: #8e908c !important;
+}
+
+span.cm-operator {
+	color: #4d4d4c !important;
+}
+
+span.cm-punctuation {
+	color: #4d4d4c !important;
+}
+
+span.cm-number {
+	/*	color: #f5871f !important;*/
+	/*	color: #a3685a !important;*/
+	color: #e78c45 !important;
+}
+
+span.cm-property {
+	color: #718c00 !important;
+}
+
+span.cm-keyword {
+	color: #8959a8 !important;
+}
+
+span.cm-string {
+	color: #718c00 !important;
+}
+
+span.cm-builtin {
+	color: #3e999f !important;
+}
+
+span.cm-variable {
+	color: #c82829 !important;
+}
+
+span.cm-variable-2,
+span.cm-class {
+	color: #eab700 !important;
+/*	color: #daa700 !important;*/
+}
+
+
+/*
+span.cm-def {
+	color: #4271ae !important;
+}
+*/
+
+span.cm-function {
+	color: #4271ae !important;
+}
+
+span.cm-error {
+	background: #ac4142;
+	color: #505050;
+}
+
+span.cm-bracket {
+	color: #202020;
+}
+
+.CodeMirror-matchingbracket {
+	background: lime;
+	color: black !important;
+}
