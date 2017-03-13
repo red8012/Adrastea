@@ -65,6 +65,36 @@ define(['base/js/namespace',
             cells.forEach(function (i) {
                 i.code_mirror.setOption('mode', 'python')
             })
+
+
+            // Add cell type switch
+            $('#insert_above_below').append(`
+                <button class="btn btn-default"
+                    id="cell-type-switch"
+                    title="switch cell type between code / markdown"
+                    data-jupyter-action="jupyter-notebook:insert-cell-below">
+                    <i class="markdown markdown-mark"></i>
+                </button>
+            `)
+            const cellTypeSwitch = $('#cell-type-switch')
+            const markdownIcon = `<i class="markdown markdown-mark"></i>`
+            const codeIcon = `<i class="fa fa-code" aria-hidden="true"></i>`
+            function refreshCellTypeIcon() {
+                var cellType = Jupyter.notebook.get_selected_cell().cell_type
+                var icon = '?'
+                if (cellType == 'code') icon = codeIcon
+                else if (cellType == 'markdown') icon = markdownIcon
+                cellTypeSwitch.empty().append(icon)
+            }
+            refreshCellTypeIcon()
+            Jupyter.notebook.events.on('selected_cell_type_changed.Notebook', refreshCellTypeIcon)
+            cellTypeSwitch.click(function() {
+                var cellType = Jupyter.notebook.get_selected_cell().cell_type
+                if (cellType == 'code')
+                    Jupyter.notebook.cells_to_markdown()
+                else
+                    Jupyter.notebook.cells_to_code()
+            })
         }
 
         return {
