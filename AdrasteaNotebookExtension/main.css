@@ -236,6 +236,10 @@ div.input_area {
 	border-radius: 5px;
 }
 
+div.output_area pre {
+	padding: 8.5px;
+}
+
 .edit_mode div.cell.selected div.input_area {
 	border-color: rgb(102, 187, 106);
 }
