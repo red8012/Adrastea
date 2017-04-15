@@ -244,6 +244,14 @@ div.output_area pre {
 	border-color: rgb(102, 187, 106);
 }
 
+div.output_subarea {
+    padding: 3.5px;
+}
+
+div.output_prompt {
+    padding-top: 12px;
+}
+
 
 /*CodeMirror Base16 Tomorrow Theme*/
 
